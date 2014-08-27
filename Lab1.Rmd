@@ -1,0 +1,103 @@
+---
+title: "Lab 1"
+author: "Dillon Niederhut"
+date: "August 26, 2014"
+output: ioslides_presentation
+---
+
+## Review introduction
+
+For this course, you are expected to already have a mastery of algebra. We do not anticipate this to be a problem, but just to be safe, we will begin by reviewing the math concepts that you are expected to know.
+
+## Order of operations
+
+1. Evaluate expressions inside parentheses
+2. Evaluate powers left to right
+3. Evaluate multiplication/division left to right
+4. Evaluate addition/subtraction left to right
+
+## Try these by hand
+
+- 4 + 2 * 3
+- 32 * 4^2^
+- (8 - 4)^2^/4
+
+## Now type them into the console in R
+
+```{r}
+4 + 2 * 3
+32 * 4 ** 2
+((8 - 4) **2)/4
+```
+
+## Lines in Cartesian coordinates
+
+A line is composed of two parts: a slope and an intercept
+
+1. A slope is a coefficient attached to a variable, like 2X. You can calculate a slope by dividing the change in Y by the change in X.
+
+2. An intercept is a constant value like 4. You can calculate an intercept by finding where a line crosses the Y axis.
+
+## Imagine you have two data points (1,6) and (2,8)
+
+The slope is calculated as `(Y2-Y1)/(X2-X1)`:
+```{r}
+
+m <- (8-6)/(2-1)
+print(m)
+```
+
+and the intercept is calculated as `Y1 - m*X1`:
+```{r}
+
+b <- (6 - 1 * m)
+print(b)
+```
+
+## Which gives you a line that looks like this:
+
+```{r, fig.height = 4, fig.width = 7, echo = FALSE}
+
+library(ggplot2)
+x <- c(1,2)
+y <- c(6,8)
+data <- data.frame(x,y)
+qplot(data = data, x, y) + geom_abline(intercept = 4, slope = 2)
+
+```
+
+## Now you try
+
+- Calculate the slope and intercept of the line crossing through these two points: (4,6) (6,4)
+- Check your answer by calculating this in R
+
+```
+
+data <- data.frame(x = c(4,6), y = c(6,4))
+summary(lm(y ~ x, data))
+```
+
+## Summation
+
+Summation notation is a shorthand for when you are adding a bunch of similar things together. They are evaluated like this:
+
+```
+
+ 10
+Sigma i = 1 + 2 + 3 + 4 + 5
+ i = 1
+```
+
+## Try calculating these sums
+
+```
+
+ 5
+Sigma i^2^
+ 1
+
+
+ 5
+(Sigma i)^2^
+ 1
+```
