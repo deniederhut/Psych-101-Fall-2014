@@ -1,11 +1,89 @@
 ---
 title: "Lab 1"
 author: "Dillon Niederhut"
-date: "August 26, 2014"
+date: "September 2, 2014"
 output: ioslides_presentation
 ---
 
-## Review introduction
+## Introduction
+
+Welcome to the Research and Data Analysis Lab! You will be spending your time in here practicing research design, statistical methods, and computing in the environment, R.
+
+- Homeworks are given in lab, and are optional (they can replace a test grade)
+- Lab participation is not optional, and is 15% of your grade
+- Your final project will most likelye REQUIRE you to use R
+
+## What the heck is R?
+
+- R is a programming environment based on the language S+ that is used for statistical computing
+
+- It works by creating an execution environment that is the same across all kinds of devices (Windows 8, Mac OSX, Ubuntu, RHEL, OpenSUSE)
+
+- It is written by statisticians, so it is very powerful but a little funky
+
+## Getting set up
+
+- Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+## Starting R
+
+- Click on the R icon, and you should see a window containing a command prompt
+
+- In this prompt, you are going to type `library(Rcmdr)`
+
+- If you see an error that says `there is no package called 'Rcmdr'`, you will first have to type in `install.packages('Rcmdr')`
+
+## It's a little funky
+
+- If you haven't used a programming language before, it might seem strange that one of those is in quotes and the other is not
+
+- What is happening here is that the `library()` command loads a function, and expects a variable label that the system already knows about, or an object
+
+- If you haven't got the package already installed, you must use the `install.packages` function to look through a list of names, or strings, for the particular package you want to install
+
+- strings are denoted by quotation marks, but objects do not need them
+
+## Some basic things
+
+- R does all the basic calculator-type functions you would expect out of a programming language
+
+- Try typing in the following commands:
+
+```{r}
+4 + 5
+
+4 == 5
+
+4 %in% c(4,5,6)
+```
+
+- See that 'c'? You can't pass R a list of numbers the way you can with other programming languages, so you have to combine them into a vector first using the concatenate function.
+
+## Errors
+
+- We'll be working in Rcmdr, so you probably won't need to use any of this unless you get error messages. The most common beginner errors in R are:
+
+1. Not using quotation marks for strings
+
+2. Not using the `c()` function to create vectors
+
+3. Entering objects as the wrong class
+
+- If you get an error you don't understand, ask me or try googling '[r] your error message'
+
+## Rcmdr
+
+- R commander is a graphical user interface (GUI) written to run on top of R
+
+- It makes R a lot easier to use, because most of the time you will not need to know how the language is actually working
+
+- However, it is very limited in the kinds of analyses it can supports
+
+## Math Review
 
 For this course, you are expected to already have a mastery of algebra. We do not anticipate this to be a problem, but just to be safe, we will begin by reviewing the math concepts that you are expected to know.
 
@@ -101,3 +179,13 @@ Sigma i^2^
 (Sigma i)^2^
  1
 ```
+
+## Finally
+
+- Any materials that I create for this class will be available at https://github.com/deniederhut/Psych-101-Fall-2014
+
+- These materials will all be written in R, so you can see both the final product and the code that produced it if you like
+
+- If you have questions, you can see me (or Dr. Lee, or one of the other TAs) during office hours
+
+- Let's get started on today's lab activity!
