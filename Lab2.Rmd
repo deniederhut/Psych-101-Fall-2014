@@ -1,0 +1,66 @@
+---
+title: "Lab 2"
+author: "Dillon Niederhut"
+date: "September 9, 2014"
+output: ioslides_presentation
+---
+
+## Don't Panic!
+
+```{r, echo=FALSE}
+library(ggplot2)
+load('survey_data_cleaned.Rda')
+```
+
+
+- We're going to start with simple things
+
+- These simple things build on each other
+
+- Make sure you are keeping up with the readings!
+
+## Why plot stuff?
+
+```{r fig.width=9, fig.height=5, echo=FALSE}
+library(png)
+library(grid)
+img <- readPNG('/Users/dillonniederhut/Dropbox/Psych101/explot.png')
+ grid.raster(img)
+```
+
+## Useful beginner steps in R (1)
+
+- You can get a sense od the structure of your data using:
+```{r}
+str(data)
+```
+
+## Useful begiiner steps in R (2)
+
+- You can get a sense of the properties of your data using:
+```{r}
+summary(data)
+```
+
+## Plotting is easy in R
+
+```{r, fig.height = 4, fig.width = 7}
+qplot(data = data, x = Q10_mother)
+```
+
+## Plotting is flexible in R
+
+```{r, fig.height = 4, fig.width = 7}
+ggplot(data = data, aes(x = Q10_mother, y = Q9_father)) + geom_jitter() + 
+  stat_smooth(method = 'lm')
+```
+
+## Getting set up
+
+- Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+- Start Rcommander with ```library(Rcmdr)```
