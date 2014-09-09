@@ -9,3 +9,9 @@ Fall 2014
 
 - Introduction to R
 - Algebra review
+
+##Lab 2, 9 September 2014
+
+- Plotting in R
+- Class survey data
+- Script to create class survey data
