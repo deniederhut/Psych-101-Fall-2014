@@ -65,5 +65,15 @@ ggplot(data = data, aes(x = Q10_mother, y = Q9_father)) + geom_jitter() +
 
 - Start Rcommander with ```library(Rcmdr)```
 
+## Some bugs in the lab worksheet
+
 - Instead of ```ClassFall14$inlove_factor```... you are going to use:
 ```data$Q8_fallinlove_factor <- factor(data$Q8_fallinlove)```
+
+- Instead of ```x <- seq```... you are going to use:
+```x <- seq(50,80,0.5)```
+
+- Some computers will not let you get frequency tables or numerical summaries. Try:
+```table(data$Q8_fallinlove_factor)```
+and
+```summary(data$Q8_fallinlove)```
