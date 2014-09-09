@@ -65,4 +65,5 @@ ggplot(data = data, aes(x = Q10_mother, y = Q9_father)) + geom_jitter() +
 
 - Start Rcommander with ```library(Rcmdr)```
 
-- Instead of ClassFall14 inlove you will be using data Q8_fallinlove
+- Instead of ```ClassFall14$inlove_factor```... you are going to use:
+```data$Q8_fallinlove_factor <- factor(data$Q8_fallinlove)```
