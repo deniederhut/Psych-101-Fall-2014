@@ -1,0 +1,115 @@
+---
+title: "Lab3"
+author: "Dillon Niederhut"
+date: "September 16, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+![SOON](/Users/dillonniederhut/Dropbox/Psych101/Soon.jpg)
+
+## Z scores
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+load('/Users/dillonniederhut/Dropbox/Psych101/survey_data_cleaned.Rda')
+library(ggplot2)
+options(warn = -1)
+ggplot(data = data, aes(x = Q19_age)) + geom_dotplot() + 
+  geom_vline(xintercept = mean(data$Q19_age, na.rm = TRUE), colour = 'red') + 
+  geom_vline(xintercept = (mean(data$Q19_age, na.rm = TRUE) + sd(data$Q19_age, na.rm = TRUE))) + 
+  geom_vline(xintercept = (mean(data$Q19_age, na.rm = TRUE) - sd(data$Q19_age, na.rm = TRUE)))
+```
+
+## The distribution of sample means
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+dist <- rnorm(n = 1000)
+for (n in c(1,4,16,25,49,100)){
+  assign(paste0('sample',n), replicate(1000, mean(sample(dist,size = n,replace = TRUE))))
+}
+dosm <- data.frame(sample1,sample4,sample16,sample49,sample100)
+ggplot(data = dosm) + geom_density(aes(x=sample1), colour = 'purple') + 
+  geom_density(aes(x=sample4), colour = 'blue') +
+  geom_density(aes(x=sample16), colour = 'green') +
+  geom_density(aes(x=sample25), colour = 'yellow') +
+  geom_density(aes(x=sample49), colour = 'orange') +
+  geom_density(aes(x=sample100), colour = 'red') + 
+  ggtitle('The distribution of sample means as a function of sample size from a normal population')
+```
+
+## The distribution of sample sd
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+popsd <- function(x){
+  bar <- mean(x)
+  N <- length(x)
+  var <- sum((x - bar)**2)/N
+  return(sqrt(var))
+}
+for (n in c(2,4,16,25)){
+  assign(paste0('sample',n), replicate(1000, popsd(sample(dist,size = n,replace = TRUE))))
+}
+for (n in c(2,4,16,25)){
+  assign(paste0('ssample',n), replicate(1000, sd(sample(dist,size = n,replace = TRUE))))
+}
+dosm <- data.frame(sample2,sample4,sample16,sample25,
+                   ssample2,ssample4,ssample16,ssample25)
+ggplot(data = dosm) + geom_density(aes(x=sample2), colour = 'purple') + 
+  geom_density(aes(x=sample4), colour = 'blue') +
+  geom_density(aes(x=sample16), colour = 'green') +
+  geom_density(aes(x=sample25), colour = 'yellow') +
+  geom_density(aes(x=ssample2), colour = 'purple', linetype = 'dashed') + 
+  geom_density(aes(x=ssample4), colour = 'blue', linetype = 'dashed') +
+  geom_density(aes(x=ssample16), colour = 'green', linetype = 'dashed') +
+  geom_density(aes(x=ssample25), colour = 'yellow', linetype = 'dashed') +
+  ggtitle('Biased and unbiased SD as a function of sample size from a normal population')
+```
+
+## Getting set up
+
+- Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+- Start Rcommander with ```library(Rcmdr)```
+
+## Final paper
+
+A research project conducted by you and 2-4 of your closest friends
+
+You must have your group and **three** ideas for a research project by the 18th or 25th
+
+The approved list of ideas is due **IN LECTURE** 30 Sept
+
+For inspiration, try:
+- annualreviews.org/journal/psych
+- pss.sagepub.com/content/current
+- reddit.com/r/psychology
+- npr.org/sections/science
+
+## Review time
+
+- 40ish multiple choice questions, 10ish short answer
+
+- Bring a **green** scantron sheet
+
+- Focus on concepts and simple calculations
+
+- Try the practice problems in the text book!
+
+## Things you should know
+
+- What is a variable? What kinds of variables can you have? What is a level?
+
+- What is reliability? What is validity? Can a measure be reliable but not valid?
+
+- What is a population? What is a sample? What is a score?
+
+- What is central tendency? How do we measure it? Which way is best?
+
+- What is variability? How do we measure it? Which way is best?
+
+
