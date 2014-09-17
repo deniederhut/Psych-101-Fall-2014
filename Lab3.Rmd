@@ -76,6 +76,10 @@ ggplot(data = dosm) + geom_density(aes(x=sample2), colour = 'purple') +
 
 - Start Rcommander with ```library(Rcmdr)```
 
+- Class survey data is already downloaded for you - check the Class Folder
+
+- You can ignore anything called `NA` - this is how R designates missing things
+
 ## Final paper
 
 A research project conducted by you and 2-4 of your closest friends
