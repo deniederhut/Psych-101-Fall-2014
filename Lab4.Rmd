@@ -15,6 +15,8 @@ output: ioslides_presentation
 
 - You **MUST MUST MUST** talk to me about your group projects first
 
+- Check out library info here: http://www.lib.berkeley.edu/information/undergraduate-students
+
 ## The Logic of Hypothesis Testing
 
 ![NULL](http://imgs.xkcd.com/comics/null_hypothesis.png)
@@ -43,3 +45,7 @@ Login to your computers with:
 - Password: c@1thinking
 
 Start Rcommander with `library(Rcmdr)`
+
+- Remember, if R says it needs to install some missing packages, choose `yes`
+
+- Then hik `Ok` and scroll down to `CA1`
