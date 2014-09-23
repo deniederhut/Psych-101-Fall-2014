@@ -49,3 +49,5 @@ Start Rcommander with `library(Rcmdr)`
 - Remember, if R says it needs to install some missing packages, choose `yes`
 
 - Then hik `Ok` and scroll down to `CA1`
+
+- Errata: question 3 should read `you can get the critical values by using the qnorm function`
