@@ -49,3 +49,14 @@ Fall 2014
 ###Files:
 - Lab4.html
 - Lab4.Rmd
+
+##Lab 5, 30 Sept 2014
+
+- Errors
+- Effect size
+- Power
+
+###Files:
+- Lab5.html
+- Lab5.Rmd
+- CLT
