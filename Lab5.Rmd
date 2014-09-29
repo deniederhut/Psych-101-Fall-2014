@@ -1,0 +1,47 @@
+---
+title: "Lab 5"
+author: "Dillon Niederhut"
+date: "September 30, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+- I have your exams!
+
+- You can have them back **when you leave section**
+
+- We are changing your homework assignments!
+
+- CLT web app here: https://deniederhut.shinyapps.io/CLTgenerator/
+
+## Z test
+
+
+
+## Power
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+library(ggplot2)
+pop <- data.frame(pop1 = rnorm(n = 10000, mean = 0))
+sam <- data.frame(pop2 = rnorm(n = 10000, mean = 3))
+ggplot() + geom_density(data = pop, aes(x = pop1), colour = 'blue') + 
+  geom_density(data = sam, aes(x = pop2), colour = 'red') + 
+  geom_vline(x = 1.96, linetype = 'dashed') +
+  ggtitle("H0 comparison distribution with H1 comparison distribution") + 
+  xlab("") + ylab("Density")
+```
+
+## Effect Size
+
+![SIZEMATTERS](/Users/dillonniederhut/Dropbox/Psych101/facebook.gif)
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
