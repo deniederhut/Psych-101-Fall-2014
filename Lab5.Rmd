@@ -49,3 +49,5 @@ Start Rcommander with `library(Rcmdr)`
 - Use non-directional hypotheses for this lab
 
 - Type II error is usually expected to be 20% or less
+
+- HW for next week is from Ch. 6
