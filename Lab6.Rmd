@@ -1,0 +1,43 @@
+---
+title: "Lab6"
+author: "Dillon Niederhut"
+date: "October 7, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+![Soon.](http://i.kinja-img.com/gawker-media/image/upload/s--EPbqACAx--/uz7gelerbicfejprhmdq.jpg)
+
+## Homework issues
+
+|                  |H0 is true        | H0 is false     |
+|------------------|------------------|-----------------|
+|Reject H0         | Type I error     | Correct decision|
+|Fail to Reject H0 | Correct decision | Type II error   |
+
+## t-tests
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+library(ggplot2)
+dist <- rnorm(n = 1000)
+for (n in c(2,4,10)){
+  assign(paste0('sample',n), replicate(1000, sd(sample(dist,size = n,replace = TRUE))))
+}
+dosm <- data.frame(sample2,sample4,sample10)
+ggplot(data = dosm) + geom_density(aes(x=sample2), colour = 'purple') + 
+  geom_density(aes(x=sample4), colour = 'blue') +
+  geom_density(aes(x=sample10), colour = 'green') +
+  ggtitle('SD as a function of sample size from a normal population') + 
+  xlab("unbiased standard deviation") + ylab("")
+```
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
