@@ -60,3 +60,12 @@ Fall 2014
 - Lab5.html
 - Lab5.Rmd
 - CLT
+
+##Lab 6, 7 Sept 2014
+
+- t-distribution
+- Single sample t-tests
+
+###Files
+- Lab5.html
+- Lab5.Rmd
