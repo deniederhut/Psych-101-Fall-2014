@@ -1,0 +1,48 @@
+---
+title: "Lab7"
+author: "Dillon Niederhut"
+date: "October 14, 2014"
+output: ioslides_presentation
+---
+
+## Lab schedule
+
+|    Date          |Topic             |
+|------------------|------------------|
+| 14 Oct          | Dependent t-test |
+| 21 Oct          | Independent t-test |
+| 28 Oct          | One-way |
+| 4 Nov           | Two-way ANOVA |
+| 11 Nov          | NO CLASS  |
+| 18 Nov          | Correlation |
+| 25 Nov          | Regression |
+| 2 Dec           | Chi-square |
+
+## Dependent samples t-test
+
+
+
+## OMG exam
+
+* Exam 2 will contain content covered by exam 1
+
+* You will be expected to know:
+    + Z-scores
+    + Z-tests
+    + Single sample t-tests
+    + Effect size
+    + Power
+    + Confidence intervals
+  
+* You will not be expected to know:
+    + Dependent samples t-tests
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
