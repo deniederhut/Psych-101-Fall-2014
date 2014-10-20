@@ -1,0 +1,56 @@
+---
+title: "Lab8"
+author: "Dillon Niederhut"
+date: "October 21, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+- Exam grades will probably be up in two weeks
+
+- We'll be cutting it close for pass/fail option
+
+- My name is not Dyan
+
+## The Independent t-test
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+library(ggplot2)
+data <- data.frame(sample.1 = rnorm(n = 40, mean = 0), sample.2 = rnorm(n = 40, mean = 1))
+ggplot(data = data) + 
+  geom_histogram(aes(x = sample.1), fill = 'blue', alpha = 0.8, binwidth = 0.25) + 
+  geom_histogram(aes(x = sample.2), fill = 'red', alpha = 0.8, binwidth = 0.25) + 
+  ggtitle("Two samples drawn from unknown populations") + 
+  xlab("") + ylab("Count")
+```
+
+## The Linear Model
+
+General formulation:
+
+`variable = constant + variables + random error`
+
+Example:
+
+`height = c + x1(sex) + x2(ethnicity) + x3(nutrition) + x4(age) + x5(hour) + e`
+
+## Sources of error in t-tests
+
+Dependent t-test:
+
+`height = c{sex, ethnicity, nutrition} + x4(age) + e{hour, random error}`
+
+Independent t-tests:
+
+`height = c{} + x3(nutrition) + e{sex, ethnicity, age, hour, random error}` 
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
