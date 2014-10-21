@@ -7,11 +7,17 @@ output: ioslides_presentation
 
 ## Announcements
 
-- Exam grades will probably be up in two weeks
+- Say my name, say my name
+    - When no one is around you
+    - Write down your section number
+    - If you aint runnin' games
 
-- We'll be cutting it close for pass/fail option
+- HW issues:
+    - Read the whole question
+    - `n` versus `n - 1`
+    - calculating the standard error
 
-- My name is not Dyan
+- Exam updates
 
 ## The Independent t-test
 
@@ -43,7 +49,7 @@ Dependent t-test:
 
 Independent t-tests:
 
-`height = c{} + x3(nutrition) + e{sex, ethnicity, age, hour, random error}` 
+`height = c{} + x4(age) + e{sex, ethnicity, nutrition, hour, random error}` 
 
 ## Lab Time!
 
