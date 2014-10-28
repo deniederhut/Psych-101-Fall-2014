@@ -1,0 +1,88 @@
+---
+title: "Lab9"
+author: "Dillon Niederhut"
+date: "October 27, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+![DON'T LOOK NOW](http://i.dailymail.co.uk/i/pix/2013/03/03/article-2287444-1867AD17000005DC-562_634x692.jpg)
+
+## The analysis of variance
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+options(warn = -1)
+library(ggplot2)
+data <- data.frame(sample.1 = rnorm(n = 10, mean = 0), 
+                   sample.2 = rnorm(n = 10, mean = 0), 
+                   sample.3 = rnorm(n = 10, mean = 0.5), 
+                   sample.4 = rnorm(n = 10, mean = 2))
+distributions <- data.frame(dist.null = rf(1000,3,36), 
+                   dist.1 = rf(1000,3,36,ncp = round(mean(data$sample.1)/(sd(data$sample.1)/sqrt(10)),4)), 
+                   dist.2 = rf(1000,3,36,ncp = round(mean(data$sample.2)/(sd(data$sample.2)/sqrt(10)),4)), 
+                   dist.3 = rf(1000,3,36,ncp = round(mean(data$sample.3)/(sd(data$sample.3)/sqrt(10)),4)), 
+                   dist.4 = rf(1000,3,36,ncp = round(mean(data$sample.4)/(sd(data$sample.4)/sqrt(10)),4)))
+
+ggplot(data = data) + 
+  stat_density(aes(x = sample.1), fill = 'red', alpha = 0.5) + 
+  stat_density(aes(x = sample.2), fill = 'yellow', alpha = 0.6) + 
+  stat_density(aes(x = sample.3), fill = 'green', alpha = 0.5) + 
+  stat_density(aes(x = sample.4), fill = 'blue', alpha = 0.5) + 
+  ggtitle("Four samples drawn from an unknown population") + 
+  xlab("") + ylab("density")
+```
+
+## Partitioning variability
+
+`variable = constant + levels of one variable + random error`
+
+GRAND MEAN ------------- GROUP MEAN ------------- ERROR
+
+-----------------Between---------------------------Within-----------------
+
+0 ------------------------------------- 1 --------------------------------- 0.5
+
+`F = EFFECTS OF GROUPS / ERROR`
+
+## The null hypothesis
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+ggplot(data = distributions) + 
+  stat_density(aes(x = dist.null), fill = 'white') + 
+  ggtitle("What F will look like if the null represents the universe") + 
+  xlab("") + ylab("density")
+```
+
+## The alternative hypothesis
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+ggplot(data = distributions) + 
+  stat_density(aes(x = dist.null), fill = 'white') + 
+  stat_density(aes(x = dist.1), fill = 'red', alpha = 0.5) + 
+  stat_density(aes(x = dist.2), fill = 'yellow', alpha = 0.5) + 
+  stat_density(aes(x = dist.3), fill = 'green', alpha = 0.5) + 
+  stat_density(aes(x = dist.4), fill = 'blue', alpha = 0.4) + 
+  ggtitle("What F will look like if the alternative represents the universe") + 
+  xlab("") + ylab("density")
+```
+
+## Example
+
+- In an article, you would write something like:
+    - 'A one-way ANOVA revealed a significant difference among the group means, F(3,36) = 4, p < 0.05'
+
+- For our hand example, we are going to use a new formula for the sum of squared deviations:
+    - `SS = (Sigma(X^2) - Sigma(X)^2)/n`
+
+- This might save you time on the exam, but *only use it if you are comfortable with it*
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
