@@ -1,0 +1,56 @@
+---
+title: "Lab10"
+author: "Dillon Niederhut"
+date: "November 4, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+![SOON](http://www.kylejarrard.com/wp-content/uploads/2012/06/soon-baby-soon.jpg)
+
+## Test-taking strategies
+
+- Really about time management
+
+- Goal is to maximize points per unit time
+
+- Remember:
+    - Some questions are easier than others
+    - Some questions are worth more points than others
+    - Some questions give partial credit for writing formulae
+
+- Manage your Yerkes-Dodson curve
+
+## Two-way ANOVAs
+
+Speaking of Yerkes-Dodson...
+
+|               | Low anxiety   | High anxiety  |
+|---------------|---------------|---------------|
+| Chopin        | 0,0,2,2       | 7,7,11,11     |
+| SOAD          | 8,9,9,10      | 1,1,0,2       |
+
+## Main effects
+
+|               | Low anxiety   | High anxiety  |             |
+|---------------|---------------|---------------|-------------|
+| Chopin        | 1             | 9             |  5          |
+| SOAD          | 9             | 1             |  5          |
+|               | 5             | 5             |             |
+
+## Interactions
+
+Since the actual math is a bit complicated, we'll use this trick:
+
+`SS-interaction = SS-total - SS-rows - SS-columns - SS-within`
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
