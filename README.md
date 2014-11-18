@@ -61,11 +61,57 @@ Fall 2014
 - Lab5.Rmd
 - CLT
 
-##Lab 6, 7 Sept 2014
+##Lab 6, 7 Oct 2014
 
 - t-distribution
 - Single sample t-tests
 
 ###Files
-- Lab5.html
-- Lab5.Rmd
+- Lab6.html
+- Lab6.Rmd
+
+##Lab 7, 14 Oct 2014
+
+- Dependent samples t-test
+- Error
+
+###Files
+
+- Lab7.html
+- Lab7.Rmd
+
+##Lab 8, 21 Oct 2014
+
+- Independent samples t-test
+- Linear models
+
+###Files
+
+- Lab8.html
+- Lab8.Rmd
+
+##Lab 9, 28 Oct 2014
+
+- One-way ANOVA
+
+###Files
+
+- Lab9.html
+- Lab9.Rmd
+
+##Lab 10, 4 Nov 2014
+
+- Two-way ANOVA
+- Test-taking strategies
+
+###Files
+- Lab10.html
+- Lab10.Rmd
+
+##Lab 11, 18 Nov 2014
+
+- Correlation
+
+###Files
+- Lab11.html
+- Lab11.Rmd
