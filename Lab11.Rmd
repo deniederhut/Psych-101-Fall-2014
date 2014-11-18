@@ -1,0 +1,71 @@
+---
+title: "Lab11"
+author: "Dillon Niederhut"
+date: "November 18, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+![Did you miss me?](https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/7625ce09536eb8e5d568ff852e604070/tumblr_mziuuyGiCs1rd9fq5o1_400.gif)
+
+## What time is it?
+
+Long stupid math time!
+
+|          | PB&J          | BLT         |
+|----------|---------------|-------------|
+| Berkeley | 7,3,4,6       | 8,7,6,7     |
+| Stanfurd | 4,5,5,6       | 2,2,4,4     |
+
+## And now for something completely different
+
+|          | # of lectures | Exam grade  |
+|----------|---------------|-------------|
+| Alice    | 0             | 40          |
+| Bob      | 8             | 70          |
+| Chuck    | 6             | 75          |
+| Eve      | 10            | 85          |
+
+## Correlation
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+library(ggplot2)
+dat <- data.frame(rand1 = rnorm(n = 10, mean = 5, sd = 2),
+                  rand2 = rnorm(n = 10, mean = 5, sd = 2))
+dat$part1 <- dat$rand1 - c(-4,-3,-2,-1,0,0,1,2,3,4)
+dat$part2 <- dat$rand2 - c(-4,-3,-2,-1,0,0,1,2,3,4)
+ggplot(data = dat) + geom_point(aes(x = rand1, y = rand2)) + xlab('') + ylab('') +
+  ggtitle('Correlation of ~ 0')
+```
+
+## Correlation
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 4}
+ggplot(data = dat) + geom_point(aes(x = part1, y = part2)) + xlab('') + ylab('') +
+  ggtitle('Correlation of ~ 0.8')
+ggplot(data = dat) + geom_point(aes(x = rand1, y = rand1)) + xlab('') + ylab('') +
+  ggtitle('Correlation of 1')
+```
+
+## Calculations
+
+- Mesuring the degree to which numbers **change together**
+
+- Z score each variable, multiply them, and average them
+
+- or `(sigma z1 * z2) / N`
+
+## Causation
+
+![Maybe](http://imgs.xkcd.com/comics/correlation.png)
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
