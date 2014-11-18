@@ -20,6 +20,10 @@ Long stupid math time!
 
 ## And now for something completely different
 
+![Before your time?](https://glyph.twistedmatrix.com/images/cleese-at-ocean-desk.jpg)
+
+## When predictors are also numeric
+
 |          | # of lectures | Exam grade  |
 |----------|---------------|-------------|
 | Alice    | 0             | 40          |
