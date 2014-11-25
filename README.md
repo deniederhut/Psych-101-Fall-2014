@@ -115,3 +115,12 @@ Fall 2014
 ###Files
 - Lab11.html
 - Lab11.Rmd
+
+##Lab 12, 25 Nov 2014
+
+- Regression
+- More about linear models
+
+###Files
+- Lab12.html
+- Lab12.Rmd
