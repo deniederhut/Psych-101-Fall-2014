@@ -1,0 +1,76 @@
+---
+title: "Lab12"
+author: "Dillon Niederhut"
+date: "November 25, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+![Soon](http://s.likes-media.com/img/434dd676201bb7248f9817c1e761719e.600x.jpg)
+
+## Linear regression
+
+`outcome = constant + predictor + error`
+
+`numeric score = mean of group 1 + difference between means (+ error)`
+
+`binary outcome = baseline odds + treatment effect`
+
+## You don't have to take my word for it
+
+An independent samples t-test, looking at how much of a morning person you are based on gender
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+load("survey_data_cleaned.Rda")
+t.test(Q17_morningperson ~ Q18_gender, data = data)
+```
+
+## You don't have to take my word for it
+
+The same question, but run as a regression
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+summary(lm(Q17_morningperson ~ Q18_gender, data = data))
+```
+
+## Practice
+
+1. Find correlation coefficient
+2. Significance test for correlation coefficient
+3. Find regression equation
+4. Significance test for regression
+5. Predict some values
+
+## Time to bust out the calculators
+
+|          | # of lectures | Exam grade  |
+|----------|---------------|-------------|
+| Alice    | 0             | 40          |
+| Bob      | 8             | 70          |
+| Chuck    | 6             | 75          |
+| Eve      | 10            | 85          |
+
+## It's easy to check your work in R
+
+```{r}
+x = c(0,8,6,10)
+y = c(40,70,75,85)
+cor.test(x = x, y = y)
+```
+
+## It's easy to check your work in R
+
+```{r}
+summary(lm(y ~ x))
+```
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
