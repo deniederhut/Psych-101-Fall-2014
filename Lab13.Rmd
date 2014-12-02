@@ -1,0 +1,167 @@
+---
+title: "Lab13"
+author: "Dillon Niederhut"
+date: "December 2, 2014"
+output: ioslides_presentation
+---
+
+## Announcements
+
+![Soon](https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/tumblr_m244r1GS3q1rnx2lvo1_400.gif)
+
+## Style Guides
+
+- 3 main types of formatting styles:
+    - American Psychological Association
+    - Modern Language Association
+    - Chicago Manual of Style
+
+- BUT each journal has its own specs, e.g.:
+    - "Taxonomic names and precise biological terms should be used to refer to animal groups, and vague, subjective descriptors such as 'higher' and 'lower' should be avoided. Similarly, the descriptive prefixes paleo-, archi-, and neo- applied to cerebellum, cortex, or striatum imply an invalid phylogenetic sequence and should also be avoided."
+    
+## APA Formatting
+
+- Any reference to another person's work in your work is immediately cited in the text
+    - e.g. "It has been established by prior research of a rather unnerving nature that one shuld not eat the yellow snow (Niederhut, 2014)."
+    
+- Hourglass layout
+
+- Statistics are reported in detail
+
+## APA Formatting
+### Title page
+
+- Title
+- Authors
+- Author affiliation
+- Page number
+- Shortened title
+
+## APA Formatting
+### Abstract
+
+- Less than 250 words
+- Summarize background, methods, main findings in 3-5 sentences
+- List key words to make your study searchable
+
+## APA Formatting
+### Sections
+
+- Introduction
+- Methods
+- Results
+- Discussion
+- Conclusion
+
+## APA Formatting
+### Headings
+
+1. **Centered, Capitalized, and Bold**
+2. **Left Justified, Bold, and Uppercase**
+3. **Indented, bold, lowercase**
+4. *Indented, bold, italic*
+
+## APA Formatting
+### Statistics
+
+- Reported in italics, with df in parantheses, e.g.:
+    - *t*(45) = 4.35
+    - *F*(3,87) = 2.41
+
+- When reporting mean comparisons (F or t tests), always report group means and sizes
+
+- When reporting regression, always report bivariate correlation and F test
+
+- Always include effect sizes, and try to include power analyses
+
+## APA Formatting
+### General things
+
+- It is better to be boring and exact than interesting and confusing
+
+- ""Only schmucks use direct quotes in scientific papers"
+    - Dillon Niederhut"
+        - Michael Scott
+        
+- Imitation is better than instruction - Kim Starr-Reid
+
+## And now for something completely different
+
+![John Cleese](https://i.imgur.com/3tn8r.png)
+
+## Chi-squared
+
+`X = (E - O) ** 2 / E`
+
+The part that students usually get wrong is calculating the expected frequencies
+
+Generally speaking, this is:
+
+`E = expected proportion * total number of subjects`
+
+For independence tests, use:
+
+`E = Row * Column / Total`
+
+## Example - your survey data
+
+```{r, echo = FALSE, fig.height = 5, fig.width = 8}
+load("survey_data_cleaned.Rda")
+library(ggplot2)
+data <- data[data$Q18_gender != "",]
+ggplot(data = data, aes(x = Q22_feelings)) + geom_bar(aes(fill = Q18_gender))
+```
+
+## Example - goodness of fit
+
+| Avoidant | Secure        | Anxious     |
+|----------|---------------|-------------|
+| 68       | 123           | 18          |
+
+## Example - test for independence
+
+|          | Male          | Female      |
+|----------|---------------|-------------|
+| Avoidant | 11            | 57          |
+| Secure   | 33            | 90          |
+| Anxious  | 4             | 14          |
+
+## Example - effect size
+
+`VC = sqrt(chisq / N * df)`
+
+|          | Phi           |
+|----------|---------------|
+| Small    | < 0.1         | 
+| Medium   | < 0.3         | 
+| Large    | < 0.5         | 
+
+
+## Checking our work in R
+
+```{r, echo = FALSE}
+chisq.test(data$Q22_feelings, data$Q18_gender)
+print('Cramers Phi is:')
+sqrt(2.815 / (209 * 2))
+```
+
+## Section evaluations
+
+![King](https://www.stat.berkeley.edu/~stark/Pics/kong.jpg)
+
+### Quantifauxcation
+"To assign a meaningless number, then pretend that since it's quantitative, it's meaningful. Examples: student evaluations of teaching effectiveness; earthquake probabilities."
+
+## The End!
+
+![Go home now](http://media3.giphy.com/media/jYAGkoghdmD9S/giphy.gif)
+
+## Lab Time!
+
+Login to your computers with:
+
+- ID: !tmfpsych101
+
+- Password: c@1thinking
+
+Start Rcommander with `library(Rcmdr)`
