@@ -40,7 +40,7 @@ output: ioslides_presentation
 ## APA Formatting
 ### Abstract
 
-- Less than 250 words
+- Less than 150 words
 - Summarize background, methods, main findings in 3-5 sentences
 - List key words to make your study searchable
 
@@ -128,7 +128,7 @@ ggplot(data = data, aes(x = Q22_feelings)) + geom_bar(aes(fill = Q18_gender))
 
 ## Example - effect size
 
-`VC = sqrt(chisq / N * df)`
+`VC = sqrt( chisq / ( N * df) )`
 
 |          | Phi           |
 |----------|---------------|
